@@ -19,21 +19,21 @@ Find the maximum total from top to bottom of the triangle below (shown in 'prob1
 */
 
 namespace func {
-    std::vector<std::vector<int>> txt_file_to_vector(std::string file_path) {
-        std::vector<std::vector<int>> triangle;
+    std::vector<std::vector<std::string>> txt_file_to_vector(std::string file_path) {
+        std::vector<std::vector<std::string>> triangle;
         std::fstream triangle_file(file_path);
         std::string single_line;
 
         while (std::getline(triangle_file, single_line)) {
-            std::vector<int> triangle_row;
+            std::vector<std::string> triangle_row;
 
             //Remove irrelevant chars from line.
             single_line.erase(std::remove(single_line.begin(), single_line.end(), ' '), single_line.cend());
             single_line.erase(std::remove(single_line.begin(), single_line.end(), '\n'), single_line.cend());
 
-            //Extract digit pair/number, turn into int and then add to triangle_row vector.
+            //Extract digit pair/number and add to triangle_row vector.
             for (int i = 0; i < static_cast<int>(single_line.length()); i+=2) {
-                triangle_row.push_back(std::stoi(single_line.substr(i, 2)));
+                triangle_row.push_back(single_line.substr(i, 2));
             }
 
             //Add triangle_row to grid vector.

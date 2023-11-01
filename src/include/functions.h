@@ -5,7 +5,12 @@
 #define FUNCTIONS_H
 
 namespace func {
-    std::vector<std::vector<std::string>> txt_file_to_vector(std::string file_path);
+    struct num_and_path {
+        int number;
+        std::string path;
+    };
+    std::vector<std::vector<func::num_and_path>> txt_file_to_vector(std::string file_path);
+    std::string max_triangle_path_sum(std::vector<std::vector<func::num_and_path>> triangle);
 }
 
 #endif

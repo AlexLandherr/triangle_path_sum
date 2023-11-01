@@ -10,6 +10,8 @@ That is, 3 + 7 + 4 + 9 = 23.
 
 Find the maximum total from top to bottom of the triangle below (shown in 'prob18_image.png').
 
+The algorithm employed here is based on [this StackExchange answer](https://math.stackexchange.com/q/3925820).
+
 # Install & Use
 First clone the repo:
 ```

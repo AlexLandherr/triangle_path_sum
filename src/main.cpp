@@ -17,15 +17,17 @@ Find the maximum total from top to bottom of the triangle below (shown in 'prob1
 */
 
 int main() {
-    std::vector<std::vector<std::string>> triangle_vec = func::txt_file_to_vector("num_triangle.txt");
+    std::vector<std::vector<func::num_and_path>> triangle_vec = func::txt_file_to_vector("num_triangle.txt");
     //Printing out the triangle; row by row without any formatting to shape output into a triangle as in example above.
-    for (std::vector<std::string> row : triangle_vec) {
+    /* for (int i = 0; i < static_cast<int>(triangle_vec.size()); i++) {
         std::string row_str;
-        for (std::string num_str : row) {
-            row_str += num_str + " ";
+        for (int j = 0; j < static_cast<int>(triangle_vec[i].size()); j++) {
+            row_str += std::to_string(triangle_vec[i][j].number) + " ";
         }
         std::cout << row_str << '\n';
-    }
+    } */
+    std::cout << "The maximum total from top to bottom of the triangle below (shown in 'prob18_image.png') is:" << '\n';
+    std::cout << func::max_triangle_path_sum(triangle_vec) << '\n';
 
     return 0;
 }
